@@ -51,6 +51,14 @@ function OurServices() {
         "Transform your brand’s visual identity with Devi Web’s premier graphic design services. Our team of talented designers is dedicated to creating stunning and impactful designs that capture your brand's essence and resonate with your audience. From logo creation and brand collateral to marketing materials and digital graphics, we craft visually compelling assets that elevate your brand presence. Let us bring your vision to life with innovative and customized design solutions that enhance your brand’s appeal and communicate your message effectively. Partner with Devi Web for graphic design that distinguishes your brand and leaves a lasting impression.",
       path: '/social-media',
     },
+    {
+      image:
+        'https://ddtwfnehtvilwpusmflk.supabase.co/storage/v1/object/public/image_assets/cctv-camera.webp',
+      title: 'CCTV Installation & Maintenance',
+      description:
+        "Ensure the safety and security of your premises with Devi Web’s professional CCTV installation and maintenance services. Our team of experts specializes in designing and implementing customized surveillance solutions that meet your specific needs and budget. From residential homes and commercial establishments to industrial facilities and public spaces, we provide comprehensive CCTV solutions that enhance security and peace of mind. Whether you’re looking to deter theft, monitor activities, or safeguard your property, our CCTV systems offer reliable performance and advanced features to protect what matters most. Partner with Devi Web for expert CCTV installation and maintenance services that keep your property safe and secure around the clock.",
+      path: '/social-media',
+    },
   ];
 
   const openModal = (service) => {

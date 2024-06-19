@@ -19,7 +19,7 @@ function Footer() {
           <div className="col-span-1 md:col-span-3 mx-8">
             <h1 className="text-xl md:text-3xl font-bold">DEVI WEB</h1>
             <p className="text-gray-200">
-              123 Amman Kovil Road,
+              123, Laxapana Road,
               <br />
               Thonikkal, Vavuniya,
               <br />
