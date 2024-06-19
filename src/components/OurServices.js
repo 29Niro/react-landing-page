@@ -37,10 +37,18 @@ function OurServices() {
     },
     {
       image:
-        'https://ddtwfnehtvilwpusmflk.supabase.co/storage/v1/object/public/image_assets/social-media-manage.jpg',
+        'https://ddtwfnehtvilwpusmflk.supabase.co/storage/v1/object/public/image_assets/company-register.webp',
       title: '"(Pvt) Ltd." Company Registration',
       description:
-        '',
+        'Establish your business with confidence through Devi Web’s expert company registration services. Our comprehensive solutions are designed to simplify the process, ensuring compliance with all legal requirements and regulations. From name reservation and document preparation to obtaining necessary licenses and registrations, we handle every detail with precision and professionalism. Let us guide you through the complexities of business formation, providing the support and expertise needed to lay a strong foundation for your company. Partner with Devi Web to navigate the registration process seamlessly and set your business on the path to success.',
+      path: '/social-media',
+    },
+    {
+      image:
+        'https://ddtwfnehtvilwpusmflk.supabase.co/storage/v1/object/public/image_assets/graphics-design.webp',
+      title: 'Graphic Designing',
+      description:
+        "Transform your brand’s visual identity with Devi Web’s premier graphic design services. Our team of talented designers is dedicated to creating stunning and impactful designs that capture your brand's essence and resonate with your audience. From logo creation and brand collateral to marketing materials and digital graphics, we craft visually compelling assets that elevate your brand presence. Let us bring your vision to life with innovative and customized design solutions that enhance your brand’s appeal and communicate your message effectively. Partner with Devi Web for graphic design that distinguishes your brand and leaves a lasting impression.",
       path: '/social-media',
     },
   ];
@@ -60,11 +68,11 @@ function OurServices() {
               key={service.title}
               className="flex flex-col border rounded-lg shadow-md"
             >
-              <div className="py-2 px-4 my-2">
+              <div className="py-2 px-6 my-2">
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="transition-transform duration-300 ease-in-out transform hover:scale-110 w-full h-auto rounded-lg object-cover"
+                  className="transition-transform duration-300 ease-in-out transform hover:scale-110 w-full h-72 rounded-lg object-cover"
                 />
               </div>
               <h1 className="text-2xl font-bold my-2 mx-4">{service.title}</h1>
