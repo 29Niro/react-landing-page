@@ -1,8 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_lrjqfpd', 'template_bm2u3dl', form.current, {
+        publicKey: 'KRbz-WrmQHaaXeCTE',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          alert('Form submitted successfully');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alert('Form submission failed');
+        }
+      );
+  };
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -52,8 +74,8 @@ function Contact() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
+      sendEmail(event);
       console.log('Form submitted:', formData);
-      alert('Form submitted successfully');
       setFormData({
         firstName: '',
         lastName: '',
@@ -71,7 +93,7 @@ function Contact() {
       <Header />
       <div className="container mx-auto md:px-44 px-4 py-8">
         <h1 className="text-3xl font-bold text-start mb-8">Contact Us</h1>
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form ref={form} className="contact-form" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex flex-col space-y-2">
               <label htmlFor="firstName" className="text-gray-700">
@@ -179,6 +201,7 @@ function Contact() {
           </div>
           <button
             type="submit"
+            value="Send"
             className="bg-blue-800 w-full text-white px-4 py-2 rounded-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4"
             onClick={handleSubmit}
           >
