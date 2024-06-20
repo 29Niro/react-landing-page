@@ -6,20 +6,25 @@ import emailjs from '@emailjs/browser';
 function Contact() {
   const form = useRef();
 
+  const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+  console.log(serviceId, templateId, publicKey);
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_lrjqfpd', 'template_bm2u3dl', form.current, {
-        publicKey: 'KRbz-WrmQHaaXeCTE',
+      .sendForm(serviceId, templateId, form.current, {
+        publicKey: publicKey,
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          // console.log('SUCCESS!');
           alert('Form submitted successfully');
         },
         (error) => {
-          console.log('FAILED...', error.text);
+          // console.log('FAILED...', error.text);
           alert('Form submission failed');
         }
       );
@@ -75,7 +80,6 @@ function Contact() {
     event.preventDefault();
     if (validateForm()) {
       sendEmail(event);
-      console.log('Form submitted:', formData);
       setFormData({
         firstName: '',
         lastName: '',

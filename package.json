@@ -12,6 +12,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dotenv": "^16.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
@@ -23,7 +24,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clear-all": "rm -rf node_modules .next out dist build",
+    "re-start": "rm -rf node_modules .next out dist build && yarn install && yarn start",
+    "re-build": "rm -rf node_modules .next out dist build && yarn install && yarn build",
+    "re-build-test": "rm -rf node_modules .next out dist build && npm install && npm run build",
+    "start:dev": "env-cmd -f .env.development npm start",
+    "build:dev": "env-cmd -f ./.env.development npm run-script build",
+    "build:prod": "env-cmd -f ./.env.production npm run-script build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +52,7 @@
     ]
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "tailwindcss": "^3.4.3"
   }
 }
